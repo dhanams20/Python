@@ -9,11 +9,7 @@ def inverse_of_matrix(matrix: list[list[float]]) -> list[list[float]]:
     """
     A matrix multiplied with its inverse gives the identity matrix.
     This function finds the inverse of a 2x2 and 3x3 matrix.
-    If the determinant of a matrix is 0, its inverse does not exist.
-
-    Sources for fixing inaccurate float arithmetic:
-    https://stackoverflow.com/questions/6563058/how-do-i-use-accurate-float-arithmetic-in-python
-    https://docs.python.org/3/library/decimal.html
+    If the determinant of a matrix is 0, its inverse does not exist
 
     Doctests for 2x2
     >>> inverse_of_matrix([[2, 5], [2, 0]])
@@ -152,4 +148,5 @@ def inverse_of_matrix(matrix: list[list[float]]) -> list[list[float]]:
 
         # Calculate the inverse of the matrix
         return [[float(d(n)) or 0.0 for n in row] for row in inverse_matrix]
+    # Raise an exception if the matrix is not 2x2 or 3x3
     raise ValueError("Please provide a matrix of size 2x2 or 3x3.")
